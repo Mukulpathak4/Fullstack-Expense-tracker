@@ -1,0 +1,97 @@
+/* Reset some default styles */
+body, h2, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the body with a background image */
+body {
+    background-image: url('your-background-image.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Times New Roman', Times, serif;
+    color: #333; /* Text color for better readability on the background */
+}
+
+/* Style the container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Style the form container */
+.form-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Style the form */
+form {
+    text-align: center;
+}
+
+/* Style the legend */
+legend {
+    color: #f00c0c;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Style labels and inputs */
+label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #1a1b19; /* Adjusted text color for better contrast */
+    font-size: 28px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transform: perspective(100px) rotateX(20deg);
+}
+
+input[type="text"], .choice {
+    border-radius: 4px;
+    height: 35px;
+    width: 100%; /* Make input fields expand to full width */
+    padding: 10px; /* Increased padding for input fields */
+    font-size: 20px; /* Adjusted font size for better readability */
+    border: 2px solid #ccc; /* Added border for input fields */
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background for input fields */
+}
+
+/* Style the submit button */
+button[type="submit"] {
+    background-color: #0bb51f; /* A vibrant green color for the button */
+    color: #fff;
+    padding: 18px 36px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 24px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0f0f0f; /* Darker green color on hover */
+}
+
+/* Style other buttons */
+input[type="button"]:hover {
+    background-color: #0f0f0f; /* Darker color on hover for buttons */
+    cursor: pointer;
+}
+
+/* Style the header */
+.header {
+    color: #1a1b19; /* Adjusted text color for better contrast */
+    font-size: 36px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transform: perspective(100px) rotateX(20deg);
+}
