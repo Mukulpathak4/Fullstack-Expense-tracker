@@ -5,34 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
-    <link rel="stylesheet" href="expense.css" <style>
+    <link rel="stylesheet" href="expenses.css" <style>
 
     </style>
 </head>
 
 <body>
-    <fieldset>
-        <legend style="color: rgb(240, 12, 12);">
-            <h2>EXPENSE TRACKER</h2>
-        </legend>
+    <legend>
+        <h2>Add Product</h2>
+    </legend>
 
-        <form id="form">
-            <label for="amount"><b>Enter Expense Amount:</b></label>
-            <input type="text" id="amount" name="amount"><br><br>
-            <label for="DESCRIPTION"><b>Enter Description</b></label>
-            <input type="text" id="description" name="description"><br><br>
-            <label type="category"><b>Choose Category:</b></label>
-            <input type="text" id="category" name="category"><br><br>
-            <input type="hidden" id="id" name="id"><br><br>
-            <button type="submit">SUBMIT</button>
-        </form>
-    </fieldset>
-    <fieldset>
-        <legend>
-            <h2 style="color: blueviolet;">DATA FROM BACKEND</h2>
-        </legend>
-        <ul id="users"></ul>
-    </fieldset>
+    <form id="form">
+        <label for="sellingprice"><b>Selling Price:</b></label>
+        <input type="text" id="sellingprice" name="amount"><br><br>
+        <label for="productname"><b>Product Name:</b></label>
+        <input type="text" id="productname" name="description"><br><br>
+        <input type="hidden" id="id" name="id"><br><br>
+        <button type="submit">SUBMIT</button>
+    </form>
+    <legend id="products">
+        <h2>PRODUCTS</h2>
+    </legend>
+    <ul id="users"></ul>
+    <legend id="totalexpenseadded">
+        <h2>Total Expense</h2>
+    </legend>
+    <ul id="totalexpense"></ul>
 
 </body>
 

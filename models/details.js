@@ -8,21 +8,16 @@ const Expense = sequelize.define('expense', {
         allowNull: false,
         primaryKey: true
     },
-    amount: 
+    sellingprice: 
     {type: Sequelize.INTEGER,
         allowNull: false,
 
     },
-    description: {
+    productname: {
         type: Sequelize.STRING,
         allowNull: false,
         distinct:true
     
-    },
-    category:{
-        type:Sequelize.STRING,
-        allowNull:false,
-        distinct:true
     }
 });
 module.exports=Expense;

@@ -20,15 +20,13 @@ form.addEventListener('submit', addItem);
 function addItem(e) {
     e.preventDefault();
     let id = document.getElementById('id').value;
-    let amount = document.getElementById('amount').value;
-    let description = document.getElementById('description').value;
-    let category = document.getElementById('category').value;
+    let sellingprice = document.getElementById('sellingprice').value;
+    let productname = document.getElementById('productname').value;
 
     let obj = {
         id,
-        amount,
-        description,
-        category
+        sellingprice,
+        productname
     };
     postRequest = async () => {
         try {
@@ -62,6 +60,7 @@ function deleteUserfromapi(id) {
         axios.delete(`http://localhost:3000/expense/${id}`)
             .then(() => {
                 deleteUser(id);
+                location.reload();
             })
             .catch((err) => {
                 console.log(err);
@@ -73,28 +72,29 @@ function deleteUserfromapi(id) {
 }
 
 
-function showNewUseronScreen(userDetails){
-    const d=document.getElementById('users')
+function showNewUseronScreen(userDetails) {
+    const d = document.getElementById('users');
     console.log(userDetails.id);
-    let li= `<li id="${userDetails.id}"> '${userDetails.amount}','${userDetails.description}','${userDetails.category}'
-     <button onclick = editUser('${ userDetails.id}','${ userDetails.amount}','${userDetails.description}','${userDetails.category}')> Edit </button> 
+    let li = `<li id="${userDetails.id}"> '${userDetails.sellingprice}','${userDetails.productname}'
      <button onclick="deleteUserfromapi('${userDetails.id}')">Delete</button>
+    </li>`;
 
-      </li>`
-   d.innerHTML=d.innerHTML + li
-   }
+    d.innerHTML = d.innerHTML + li;
+
+    // Calculate and update the total expense
+    const totalexpense = document.getElementById('totalexpense');
+    const currentTotal = parseFloat(totalexpense.textContent) || 0; // Get the current total, default to 0 if not present
+    const sellingPrice = parseFloat(userDetails.sellingprice);
+    
+    // Add the current user's selling price to the total
+    const newTotal = currentTotal + sellingPrice;
+
+    totalexpense.textContent = newTotal.toFixed(2); // Display the updated total with 2 decimal places
+}
+
    function deleteUser(id) {
     let child = document.getElementById(id)
     let parent=document.getElementById('users')
     parent.removeChild(child)
     
 }
-
-function editUser(id,amount,description,category) {
-    flag = true;
-    document.getElementById('id').value=id;
-    document.getElementById('amount').value=amount;
-document.getElementById('category').value=category;
-document.getElementById('description').value=description;
-
-    }
